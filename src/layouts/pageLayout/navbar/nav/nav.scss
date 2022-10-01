@@ -1,0 +1,84 @@
+@import "../../../../globalStyle.scss";
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-transform: capitalize;
+
+  a,p{
+    padding:30px 0;
+    color:$Gray;
+    &:hover{
+        color: black;
+        
+    }
+  }
+
+  .dropdown_menu {
+    position: relative;
+    cursor: pointer;
+    .up{
+        display: none;
+    }
+    &:hover{
+        .down{
+            display: none;
+        }
+        .up{display: inline-block;}
+    }
+    &:hover .dropdown_wraper{
+        display: block;
+        
+    }
+    .dropdown_wraper {
+      min-width: 160px;
+      position: absolute;
+      background-color: white;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px  $Gray;
+      overflow: hidden;
+      display: none;
+     padding: 20px 0;
+      a {
+        display: inline-block;
+        padding: 5px 20px;
+        svg{           
+            margin-right: 10px;
+        }
+      }
+
+      .dropdown_item{
+        &:hover{
+            background-color: rgb(240, 239, 239);
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width:900px){
+  ul{
+    display: block;
+    
+    a,p{
+      padding:10px 20px;
+      display:inline-block;
+    }
+
+    .dropdown_menu{
+      position: unset;
+      .dropdown_wraper{
+        box-shadow: none;
+        position: unset;
+        padding:0;
+        padding-left:20px;
+        background-color: transparent;
+      }
+    }
+  }
+}

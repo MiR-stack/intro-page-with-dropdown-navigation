@@ -1,0 +1,100 @@
+@import "../../../globalStyle.scss";
+
+.hero-section {
+  @include flex;
+  justify-content: space-between;
+  min-height: 80vh;
+  padding: 50px;
+  .wraper {
+    @include flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    width: 520px;
+    .content {
+      @include flex;
+      flex-direction: column;
+      gap: 30px;
+      font-weight: 700;
+      align-items: flex-start;
+      h1 {
+        font-size: calc(40px + 1.5vw);
+        text-transform: capitalize;
+        line-height: 1;
+      }
+      .body {
+        color: $Gray;
+        font-size: $paragraph;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: $Black;
+        color: $White;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+          border: 2px solid $Black;
+          color: $Black;
+          background-color: $White;
+        }
+      }
+    }
+    .brands {
+      @include flex;
+      gap: 20px;
+    }
+  }
+  .image {
+    height: 850px;
+    max-height: 70vh;
+    object-fit: cover;
+    object-position: center;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    gap: 50px;
+    .wraper {
+      width: 100%;
+      align-items: center;
+      .content {
+        align-items: center;
+        .body {
+          max-width: 500px;
+        }
+      }
+    }
+    .image {
+      height: 500px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+.hero-section{
+    padding: 0px;
+    .image{
+        height:300px;
+    }
+    .wraper{
+        padding: 20px;
+        .brands{
+            gap:10px;
+        }
+    }
+}
+}
+@media only screen and (max-width: 375px) {
+    .hero-section .wraper .brands {
+        flex-wrap: wrap;
+
+    }
+}

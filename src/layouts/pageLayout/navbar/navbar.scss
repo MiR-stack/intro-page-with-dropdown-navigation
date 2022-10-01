@@ -1,0 +1,95 @@
+@import "../../../globalStyle.scss";
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: flex-start;
+  padding: 0 50px;
+
+  .brand_name {
+    font-size: calc(30px + 1vw);
+  }
+
+  .wraper {
+    width: 100%;
+    @include flex;
+    justify-content: space-between;
+
+    .close{
+        display: none;
+    }
+
+    .authentication {
+      @include flex;
+      gap: 30px;
+
+      button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        color: $Gray;
+        text-transform: capitalize;
+
+        &:hover {
+          color: $Black;
+        }
+      }
+
+      .registration {
+        border: 2px solid $Gray;
+        padding: 10px 15px;
+        border-radius: 20px;
+
+        &:hover {
+          border: 2px solid $Black;
+        }
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    justify-content: space-between;
+    padding:  20px;
+    .wraper {
+      position: fixed;
+      width: 200px;
+      top: 0%;
+      right: -100%;
+      display: block;
+      height: 100vh;
+      background-color: white;
+      transition: .3s linear;
+      z-index: 2;
+      .close{
+        display: block;
+        text-align: right;
+       margin: 30px 20px;
+      }
+      .authentication {
+        margin-top:30px;
+        flex-direction: column;
+        justify-content: center;
+        gap:20px;
+        .registration{
+            width:80%;
+        }
+      }
+    }
+    .nav-show{
+        right: 0;
+        transition: .3s linear;
+    }
+
+    .menu {
+      display: block;
+    }
+  }
+}
